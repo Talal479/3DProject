@@ -8,16 +8,16 @@ const controls = new SPLAT.OrbitControls(camera, renderer.canvas);
 
 // Load and render the .splat file
 async function loadSplatFile() {
-  const url = "/src/example.splat"; // Replace with the path to your .splat file
-  await SPLAT.Loader.LoadAsync(url, scene, () => {
-    console.log('Splat file loaded successfully');
-  });
-  const animate = () => {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  };
-  animate();
+    const url = "./src/example.splat"; // Ensure this path is correct and relative
+    await SPLAT.Loader.LoadAsync(url, scene, () => {
+        console.log('Splat file loaded successfully');
+    });
+    const animate = () => {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    };
+    animate();
 }
 
 // Call the function to load and render the .splat file
